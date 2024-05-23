@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<br> <br> 
+	
+
+  <div class="background-image"></div>
+<div class="slideshow-container">
+	  <div><span class="mySlides fade">
+        <img src= "imagenes/medellín.jpeg" style="width:70%" height="525px">
+    </span></div>
+    <div><span class="mySlides fade">
+        <img src= "imagenes/plaza botero 2.jpeg" style="width:70%">
+    </span></div>
+    <div><span class="mySlides fade">
+        <img src= "imagenes/gran plaza.jpeg" style="width:70%">
+    </span></div>
+  
+    
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+	
+
+
+<a href="boton animado.html.html" class="button1"> <span>La candelaria</span>
+ </a>
+	
+
+
+	
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 1000); // Change image every 2 seconds
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+	
+	
+	
+</script>
+
+</body>
+
